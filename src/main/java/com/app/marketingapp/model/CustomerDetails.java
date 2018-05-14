@@ -13,17 +13,17 @@ public class CustomerDetails implements Serializable {
 	private static final long serialVersionUID = -6831053983913881923L;
 
 	@XmlElement
-	private int customerid;
+	private String customerId;
 	
 	@XmlElement
 	private List<Contact> contactDetailsList;
 
-	public int getCustomerid() {
-		return customerid;
+	public String getCustomerId() {
+		return customerId;
 	}
 
-	public void setCustomerid(int customerid) {
-		this.customerid = customerid;
+	public void setCustomerid(String customerId) {
+		this.customerId = customerId;
 	}
 
 	public List<Contact> getContactDetailsList() {

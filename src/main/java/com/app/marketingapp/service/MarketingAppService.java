@@ -11,13 +11,13 @@ public interface MarketingAppService {
 	
 	CustomerDetails getCustomerDetails(int customerId);
 	
-	CustomerDetails updateCustomerDetails(int customerId, List<Contact> customerDetailsList);
+	CustomerDetails updateCustomerDetails(String customerId, List<Contact> customerDetailsList);
 	
 	CustomerDetails createCustomerDetails(List<Contact> customerDetailsList);
 	
-	AccountDetails getAccountDetails(int accountId);
+	AccountDetails getAccountDetails(String accountId);
 	
-	AccountDetails updateAccountDetails(int accountId, List<Account> accountDetailsList);
+	AccountDetails updateAccountDetails(String accountId, List<Account> accountDetailsList);
 	
 	AccountDetails createAccountDetails(List<Account> accountDetailsList);
 	
