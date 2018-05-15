@@ -4,7 +4,7 @@
 
 * Customer account relationship - assuming that a single customer could possess multiple accounts - To retrieve accounts a customer has - using a hashmap to store data with the key being the customer id and the value - a list of all the accounts under that customer.
 
-* 
+* Please refer the documentation sent along to get documentation on approaches for GET/PUT/POST calls for both account and contact endpoints.
 
 ## Devops Work
 ### Local Testing (Docker approach)
