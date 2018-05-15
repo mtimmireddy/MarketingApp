@@ -28,4 +28,30 @@
     - docker exec -it containerid /bin/bash
       perform a docker copy as follows to copy the newly generated war/jar on to the container
       C:\workspaces\MarketingApp\target\app-ws.war 48ff5f044119:/usr/local/tomcat/webapps/app-ws.war. Once the containers have the new war, testing could be done by hitting the endpoints via postman. 
-      Similar approach can be applied for UI testing as well. 
+      Similar approach can be applied for UI testing as well.
+      
+### AWS Infrastructure Checklist
+* Work with AWS infrastructure team to secure the following details to build the AWS infrastructure
+   - VPC the application is to be hosted on.
+   - Network Architecture Diagram showing the flow of traffic through the applications
+   - Required Security groups , subnets for allowing data/traffic flow through via both HTTPS/TCP
+   - Dockerfile to create docker images - docker build scripts for both pre-prod and prod with credentials like app id and app secret if any
+   - Jenkinsfile for CICD pipelines
+   - Webhook configurations via GitHub or the repository being used
+   - Parameter files to bring the AWS ECS infrastructure(Cloud formation templates or Terraform files)
+   - Task Definitions to deploy docker images on ECS
+ 
+
+
+## Performance Testing
+* The endpoints can be mocked using either Parasoft or Mountebank so that we avoid bombarding the QA endpoints with high traffic inflow during performance testing
+* Tools like Jmeter and AppDynamics could be used to Performance Test, monitor results and document them to confirm app stability under high traffic conditions
+
+
+## Production Readiness Checklist
+* Unit testing, E2E testing, Integration, regression and performance testing are done
+* Design review board meeting has approved the app for production
+* AWS security review done -  Security groups, subnets and other network information is obtained 
+* Parameter files are ready to bring up AWS infrastructure
+* Jenkins pipeline in place
+* High availability configuration is in place for the application to be resilient in many availability zones - with active/active or active/passive availability and route 53 mechanism in place to route traffic in case of an outage.
