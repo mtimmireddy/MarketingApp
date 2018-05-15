@@ -1,5 +1,9 @@
 package com.app.marketingapp.web.resource;
 
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -9,17 +13,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 import com.app.marketingapp.model.Account;
-import com.app.marketingapp.model.AccountDetails;
 import com.app.marketingapp.model.Contact;
-import com.app.marketingapp.model.CustomerDetails;
 import com.app.marketingapp.utils.Constants;
 import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiResponses;
 import com.wordnik.swagger.annotations.ApiResponse;
-
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
-
-import java.util.List;
+import com.wordnik.swagger.annotations.ApiResponses;
 
 @Path("/marketingapp")
 @Consumes({ APPLICATION_JSON })
@@ -30,42 +28,56 @@ public interface MarketingAppResource {
 	@GET
 	@Path("/marketingapp/{customerId}")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = Constants.SUCCESS),
-			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED) })
+			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED),
+			@ApiResponse(code = 400, message = Constants.INVALID_INPUT),
+			@ApiResponse(code = 500, message = Constants.INTERNAL_SERVER_ERROR) })
 
-	public CustomerDetails getCustomerDetails(@QueryParam("customerId") String customerId);
+	public List<Contact> getCustomerDetails(@QueryParam("customerId") String customerId);
 
 	@GET
 	@Path("/marketingapp/{accountId}")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = Constants.SUCCESS),
-			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED) })
+			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED),
+			@ApiResponse(code = 400, message = Constants.INVALID_INPUT),
+			@ApiResponse(code = 500, message = Constants.INTERNAL_SERVER_ERROR) })
 
-	public AccountDetails getAccountDetails(@QueryParam("accountId") String accountId);
+	public List<Account> getAccountDetails(@QueryParam("accountId") String accountId);
 
 	@PUT
 	@Path("/marketingapp/{customerId}")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = Constants.SUCCESS),
-			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED) })
-	public CustomerDetails updateCustomerDetails(@QueryParam("customerId") String customerId,
+			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED),
+			@ApiResponse(code = 400, message = Constants.INVALID_INPUT),
+			@ApiResponse(code = 500, message = Constants.INTERNAL_SERVER_ERROR) })
+	public Boolean updateCustomerDetails(@QueryParam("customerId") String customerId,
 			List<Contact> customerDetailsList);
 
 	@PUT
 	@Path("/marketingapp/{accountId}")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = Constants.SUCCESS),
-			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED) })
-	public AccountDetails updateAccountDetails(@QueryParam("accountId") String accountId,
-			List<Account> accountDetailsList);
+			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED),
+			@ApiResponse(code = 400, message = Constants.INVALID_INPUT),
+			@ApiResponse(code = 500, message = Constants.INTERNAL_SERVER_ERROR) })
+	public Boolean updateAccountDetails(@QueryParam("accountId") String accountId, List<Account> accountDetailsList);
 
 	@POST
 	@Path("/marketingapp")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = Constants.SUCCESS),
-			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED) })
+			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED),
+			@ApiResponse(code = 400, message = Constants.INVALID_INPUT),
+			@ApiResponse(code = 500, message = Constants.INTERNAL_SERVER_ERROR),
+			@ApiResponse(code = 201, message = Constants.CREATED) })
 
-	public CustomerDetails createCustomerDetails(List<Contact> customerDetailsList);
+	public Boolean createCustomerDetails(List<Contact> customerDetailsList);
 
 	@POST
 	@Path("/marketingapp")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = Constants.SUCCESS),
-			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED) })
-	public AccountDetails createAccountDetails(List<Account> accountDetailsList);
+			@ApiResponse(code = 401, message = Constants.AUTHORIZATION_FAILED),
+			@ApiResponse(code = 400, message = Constants.INVALID_INPUT),
+			@ApiResponse(code = 500, message = Constants.INTERNAL_SERVER_ERROR),
+			@ApiResponse(code = 201, message = Constants.CREATED) })
+
+	public Boolean createAccountDetails(List<Account> accountDetailsList);
 
 }

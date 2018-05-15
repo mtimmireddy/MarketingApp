@@ -20,41 +20,47 @@ public class MarketingAppServiceImpl implements MarketingAppService {
 
 	@Override
 	public List<Contact> getCustomerDetails(String customerId) {
-		if(!customerId.isEmpty()) {
+		if(!customerId.equals(null)) {
 			
 			marketingAppDao.getCustomerDetails(customerId);
 			
 		}
 		return marketingAppDao.getCustomerDetails(customerId);
 	}
+	
 
 	@Override
-	public CustomerDetails updateCustomerDetails(String customerId, List<Contact> customerDetailsList) {
-		// TODO Auto-generated method stub
+	public List<Account> getAccountDetails(String accountId) {
+		if(!accountId.equals(null)) {
+			marketingAppDao.getAccountDetails(accountId);
+			
+		}
+		
+		return marketingAppDao.getAccountDetails(accountId);
+	}
+
+	@Override
+	public Boolean updateCustomerDetails(String customerId, List<Contact> customerDetailsList) {
+		// please see attached documentation for approach
 		return null;
 	}
 
 	@Override
-	public CustomerDetails createCustomerDetails(List<Contact> customerDetailsList) {
-		// TODO Auto-generated method stub
+	public Boolean createCustomerDetails(List<Contact> customerDetailsList) {
+		//  please see attached documentation for approach
+		return null;
+	}
+
+
+	@Override
+	public Boolean updateAccountDetails(String accountId, List<Account> accountDetailsList) {
+		//  please see attached documentation for approach
 		return null;
 	}
 
 	@Override
-	public AccountDetails getAccountDetails(String accountId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public AccountDetails updateAccountDetails(String accountId, List<Account> accountDetailsList) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public AccountDetails createAccountDetails(List<Account> accountDetailsList) {
-		// TODO Auto-generated method stub
+	public Boolean createAccountDetails(List<Account> accountDetailsList) {
+		//  please see attached documentation for approach
 		return null;
 	}
 
