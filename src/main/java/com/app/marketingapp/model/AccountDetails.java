@@ -13,16 +13,16 @@ public class AccountDetails implements Serializable {
 	
 	private static final long serialVersionUID = 3337237843909844924L;
 	@XmlElement
-	private int accountId;
+	private String accountId;
 	
 	@XmlElement
 	private List<Account> accountDetailsList;
 	
 	
-	public int getAccountId() {
+	public String getAccountId() {
 		return accountId;
 	}
-	public void setAccountId(int accountId) {
+	public void setAccountId(String accountId) {
 		this.accountId = accountId;
 	}
 	public List<Account> getAccountDetailsList() {

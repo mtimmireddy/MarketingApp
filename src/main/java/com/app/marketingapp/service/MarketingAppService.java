@@ -9,13 +9,13 @@ import com.app.marketingapp.model.CustomerDetails;
 
 public interface MarketingAppService {
 	
-	CustomerDetails getCustomerDetails(int customerId);
+	List<Contact> getCustomerDetails(String customerId);
 	
 	CustomerDetails updateCustomerDetails(String customerId, List<Contact> customerDetailsList);
 	
 	CustomerDetails createCustomerDetails(List<Contact> customerDetailsList);
 	
-	AccountDetails getAccountDetails(String accountId);
+	List<Account> getAccountDetails(String accountId);
 	
 	AccountDetails updateAccountDetails(String accountId, List<Account> accountDetailsList);
 	

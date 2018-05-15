@@ -12,31 +12,31 @@ public class Contact implements Serializable {
 
 	private static final long serialVersionUID = 6681519764594946711L;
 	
-	@XmlElement
+	
 	private String name;
 	
-	@XmlElement
+	
 	private String id;
 	
-	@XmlElement
+	
 	private String emailAddress;
 
-	@XmlElement
+	
 	private String addressLine1;
 
-	@XmlElement
+	
 	private String addressLine2;
 	
-	@XmlElement
+	
 	private String city;
 	
-	@XmlElement
+	
 	private String state;
 	
-	@XmlElement
+	
 	private String postalcode;
 	
-	@XmlElement
+	
 	private String country;
 
 	public String getName() {

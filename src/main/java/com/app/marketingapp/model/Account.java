@@ -10,28 +10,40 @@ public class Account implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 7388546907334010182L;
-
 	
-	@XmlElement
+	
+   private String accountId;
+	
+	
 	private String companyName;
 	
-	@XmlElement
+	
 	private String addressLine1;
 	
-	@XmlElement
+	
 	private String addressLine2;
 	
-	@XmlElement
+	
 	private String city;
 	
-	@XmlElement
+	
 	private String state;
 	
-	@XmlElement
+	
 	private String postalCode;
 	
-	@XmlElement
+	
 	private String country;
+	
+	
+
+	public String getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+	}
 
 	public String getCompanyName() {
 		return companyName;
