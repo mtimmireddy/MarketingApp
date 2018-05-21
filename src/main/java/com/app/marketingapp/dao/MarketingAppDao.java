@@ -4,17 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.persistence.Column;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.app.marketingapp.model.Account;
 import com.app.marketingapp.model.AccountDetails;
 import com.app.marketingapp.model.Contact;
-import com.app.marketingapp.model.CustomerDetails;
 import com.app.marketingapp.model.IncomingAccountInfoPayload;
 import com.app.marketingapp.model.IncomingCustomerContactPayload;
 
@@ -27,9 +23,10 @@ public class MarketingAppDao {
 	HashMap<String, List<Contact>> customerDetailsMap = new HashMap<String, List<Contact>>();
 	HashMap<String, List<Account>> accountMapWithContact = new HashMap<String, List<Account>>();
 	List<Contact> customerDetailsList = new ArrayList<Contact>();
-	// CustomerDetails customerdetails = new CustomerDetails();
+
 	List<Account> accountDetailsList = new ArrayList<Account>();
 	AccountDetails accountDetails = new AccountDetails();
+
 
 	public Boolean createCustomerDetails(IncomingCustomerContactPayload incomingCustomerPayload) {
 
