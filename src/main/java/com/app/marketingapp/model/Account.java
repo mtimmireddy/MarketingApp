@@ -1,8 +1,13 @@
 package com.app.marketingapp.model;
 
 import java.io.Serializable;
+import javax.persistence.*;
+import javax.xml.bind.annotation.*;
 
-import javax.xml.bind.annotation.XmlElement;
+@Entity
+@Table(name = "account")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 
 public class Account implements Serializable {
 
@@ -11,38 +16,37 @@ public class Account implements Serializable {
 	 */
 	private static final long serialVersionUID = 7388546907334010182L;
 	
+	@Column(nullable = false)
+	private String id;
 	
-   private String accountId;
-	
-	
+	@Column(nullable = false)
 	private String companyName;
 	
-	
+	@Column(nullable = false)
 	private String addressLine1;
 	
-	
+	@Column(nullable = false)
 	private String addressLine2;
 	
-	
+	@Column(nullable = false)
 	private String city;
 	
-	
+	@Column(nullable = false)
 	private String state;
 	
-	
+	@Column(nullable = false)
 	private String postalCode;
 	
-	
+	@Column(nullable = false)
 	private String country;
 	
 	
-
-	public String getAccountId() {
-		return accountId;
+	public String getId() {
+		return id;
 	}
 
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getCompanyName() {
@@ -100,5 +104,15 @@ public class Account implements Serializable {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
+	
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", companyName=" + companyName + ", addressLine1=" + addressLine1
+				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", state=" + state + ", postalCode="
+				+ postalCode + ", country=" + country + "]";
+	}
+	
+
 
 }

@@ -11,94 +11,92 @@ public class IncomingCustomerContactPayload implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private static String name;
+	private  String name;
 
-	private static String id;
+	
 
-	private static String emailAddress;
+	private  String emailAddress;
 
-	private static String addressLine1;
+	private  String addressLine1;
 
-	private static String addressLine2;
+	private  String addressLine2;
 
-	private static String city;
+	private  String city;
 
-	private static String state;
+	private  String state;
 
-	private static String postalcode;
+	private  String postalcode;
 
-	private static String country;
+	private  String country;
 
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 
-	public static void setName(String name) {
-		IncomingCustomerContactPayload.name = name;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public static String getId() {
-		return id;
-	}
+	
 
-	public static void setId(String id) {
-		IncomingCustomerContactPayload.id = id;
-	}
-
-	public static String getEmailAddress() {
+	public String getEmailAddress() {
 		return emailAddress;
 	}
 
-	public static void setEmailAddress(String emailAddress) {
-		IncomingCustomerContactPayload.emailAddress = emailAddress;
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 
-	public static String getAddressLine1() {
+	public String getAddressLine1() {
 		return addressLine1;
 	}
 
-	public static void setAddressLine1(String addressLine1) {
-		IncomingCustomerContactPayload.addressLine1 = addressLine1;
+	public void setAddressLine1(String addressLine1) {
+		this.addressLine1 = addressLine1;
 	}
 
-	public static String getAddressLine2() {
+	public String getAddressLine2() {
 		return addressLine2;
 	}
 
-	public static void setAddressLine2(String addressLine2) {
-		IncomingCustomerContactPayload.addressLine2 = addressLine2;
+	public void setAddressLine2(String addressLine2) {
+		this.addressLine2 = addressLine2;
 	}
 
-	public static String getCity() {
+	public String getCity() {
 		return city;
 	}
 
-	public static void setCity(String city) {
-		IncomingCustomerContactPayload.city = city;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
-	public static String getState() {
+	public String getState() {
 		return state;
 	}
 
-	public static void setState(String state) {
-		IncomingCustomerContactPayload.state = state;
+	public void setState(String state) {
+		this.state = state;
 	}
 
-	public static String getPostalcode() {
+	public String getPostalcode() {
 		return postalcode;
 	}
 
-	public static void setPostalcode(String postalcode) {
-		IncomingCustomerContactPayload.postalcode = postalcode;
+	public void setPostalcode(String postalcode) {
+		this.postalcode = postalcode;
 	}
 
-	public static String getCountry() {
+	public String getCountry() {
 		return country;
 	}
 
-	public static void setCountry(String country) {
-		IncomingCustomerContactPayload.country = country;
+	public void setCountry(String country) {
+		this.country = country;
 	}
+	
+	
+	
 
+	
 }

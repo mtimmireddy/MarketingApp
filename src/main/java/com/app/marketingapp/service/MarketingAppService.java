@@ -4,20 +4,25 @@ import java.util.List;
 
 import com.app.marketingapp.model.Account;
 import com.app.marketingapp.model.Contact;
+import com.app.marketingapp.model.IncomingAccountInfoPayload;
+import com.app.marketingapp.model.IncomingCustomerContactPayload;
 
 public interface MarketingAppService {
 	
-	List<Contact> getCustomerDetails(String customerId);
+	List<Contact> getCustomerDetails(String id);
 	
-	Boolean updateCustomerDetails(String customerId, List<Contact> customerDetailsList);
+	Boolean updateCustomerDetails(String id, IncomingCustomerContactPayload incomingCustomerPayload);
 	
-	Boolean createCustomerDetails(List<Contact> customerDetailsList);
+	Boolean createCustomerDetails(IncomingCustomerContactPayload incomingCustomerPayload);
 	
-	List<Account> getAccountDetails(String accountId);
+	List<Account> getAccountDetailsByCustomerId(String id);
 	
-	Boolean updateAccountDetails(String accountId, List<Account> accountDetailsList);
+	List<Account> getAccountDetailsByCompanyName(String companyName);
 	
-	Boolean createAccountDetails(List<Account> accountDetailsList);
+	
+	Boolean updateAccountDetails(String companyName, IncomingAccountInfoPayload incomingAccountInfoPayload);
+	
+	Boolean createAccountDetails(IncomingAccountInfoPayload incomingAccountInfoPayload);
 	
 
 }

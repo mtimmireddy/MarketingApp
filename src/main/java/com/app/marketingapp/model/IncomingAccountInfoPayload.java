@@ -8,87 +8,87 @@ public class IncomingAccountInfoPayload implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	private String id;
+
+	private String companyName;
+
+	private String addressLine1;
+
+	private String addressLine2;
+
+	private String city;
+
+	private String state;
+
+	private String postalCode;
+
+	private String country;
+
 	
-	private static String accountId;
 
-	private static String companyName;
-
-	private static String addressLine1;
-
-	private static String addressLine2;
-
-	private static String city;
-
-	private static String state;
-
-	private static String postalCode;
-
-	private static String country;
-	
-	
-
-	public static String getAccountId() {
-		return accountId;
+	public String getId() {
+		return id;
 	}
 
-	public static void setAccountId(String accountId) {
-		IncomingAccountInfoPayload.accountId = accountId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public static String getCompanyName() {
+	public String getCompanyName() {
 		return companyName;
 	}
 
-	public static void setCompanyName(String companyName) {
-		IncomingAccountInfoPayload.companyName = companyName;
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
-	public static String getAddressLine1() {
+	public String getAddressLine1() {
 		return addressLine1;
 	}
 
-	public static void setAddressLine1(String addressLine1) {
-		IncomingAccountInfoPayload.addressLine1 = addressLine1;
+	public void setAddressLine1(String addressLine1) {
+		this.addressLine1 = addressLine1;
 	}
 
-	public static String getAddressLine2() {
+	public String getAddressLine2() {
 		return addressLine2;
 	}
 
-	public static void setAddressLine2(String addressLine2) {
-		IncomingAccountInfoPayload.addressLine2 = addressLine2;
+	public void setAddressLine2(String addressLine2) {
+		this.addressLine2 = addressLine2;
 	}
 
-	public static String getCity() {
+	public String getCity() {
 		return city;
 	}
 
-	public static void setCity(String city) {
-		IncomingAccountInfoPayload.city = city;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
-	public static String getState() {
+	public String getState() {
 		return state;
 	}
 
-	public static void setState(String state) {
-		IncomingAccountInfoPayload.state = state;
+	public void setState(String state) {
+		this.state = state;
 	}
 
-	public static String getPostalCode() {
+	public String getPostalCode() {
 		return postalCode;
 	}
 
-	public static void setPostalCode(String postalCode) {
-		IncomingAccountInfoPayload.postalCode = postalCode;
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
 	}
 
-	public static String getCountry() {
+	public String getCountry() {
 		return country;
 	}
 
-	public static void setCountry(String country) {
-		IncomingAccountInfoPayload.country = country;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 }

@@ -2,7 +2,20 @@ package com.app.marketingapp.model;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlElement;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+
+@Entity
+@Table(name = "contact")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 
 public class Contact implements Serializable {
 
@@ -12,31 +25,32 @@ public class Contact implements Serializable {
 
 	private static final long serialVersionUID = 6681519764594946711L;
 	
-	
+	@Column(nullable = false)
 	private String name;
 	
-	
+	@Id
+	@GeneratedValue
 	private String id;
 	
-	
+	@Column(nullable = false)
 	private String emailAddress;
 
-	
+	@Column(nullable = false)
 	private String addressLine1;
 
-	
+	@Column(nullable = false)
 	private String addressLine2;
 	
-	
+	@Column(nullable = false)
 	private String city;
 	
-	
+	@Column(nullable = false)
 	private String state;
 	
+	@Column(nullable = false)
+	private String postalCode;
 	
-	private String postalcode;
-	
-	
+	@Column(nullable = false)
 	private String country;
 
 	public String getName() {
@@ -97,12 +111,12 @@ public class Contact implements Serializable {
 		this.state = state;
 	}
 
-	public String getPostalcode() {
-		return postalcode;
+	public String getPostalCode() {
+		return postalCode;
 	}
 
-	public void setPostalcode(String postalcode) {
-		this.postalcode = postalcode;
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
 	}
 
 	public String getCountry() {
@@ -111,6 +125,15 @@ public class Contact implements Serializable {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Contact [name=" + name + ", id=" + id + ", emailAddress=" + emailAddress + ", addressLine1="
+				+ addressLine1 + ", addressLine2=" + addressLine2 + ", city=" + city + ", state=" + state
+				+ ", postalCode=" + postalCode + ", country=" + country + "]";
 	}
 
 }
