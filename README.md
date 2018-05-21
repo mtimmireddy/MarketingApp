@@ -4,10 +4,9 @@
 
 * Customer account relationship - assuming that a single customer could possess multiple accounts - To retrieve accounts a customer has - using a hashmap to store data with the key being the customer id and the value - a list of all the accounts under that customer.
 
-* Please refer the documentation sent along to get documentation on approaches for GET/PUT/POST calls for both account and contact endpoints.
 
-## Devops Work
-### Local Testing (Docker approach)
+
+## Local Testing (Docker approach)
 
 * Run command - mvn clean install to create a jar/war executable for the code.
 * initial testing - since the artifacts do not exist in nexus/artifactory as there have been no releases yet, use mvn deploy to get the war files into the repositories being used.
@@ -30,6 +29,60 @@
       C:\workspaces\MarketingApp\target\app-ws.war 48ff5f044119:/usr/local/tomcat/webapps/app-ws.war. Once the containers have the new war, testing could be done by hitting the endpoints via postman. 
       Similar approach can be applied for UI testing as well.
       
+## How to run the app
+* Clone this repository 
+* Make sure you are using JDK 1.8 and Maven 3.x
+* You can build the project using the following command **mvn clean install**
+* Once successfully built, you can run the service as follows:
+
+    - While in the target directory where the jar lies  -  java -jar marketingapp-0.0.1-SNAPSHOT.war
+    - While in any other directory -  java -jar target_directory_path/marketingapp-0.0.1-SNAPSHOT.war
+    
+    
+## JSON Payload for post and put requests
+
+**Contact**
+
+{
+"emailAddress" : "adam@test.com",
+"addressLine1" : "2345 Dulles Station Blvd",
+"addressLine2" : " Apt# 2415"
+"city" : "Herndon",
+"state" : "VA",
+"postalCode" : "20171"
+"country : "USA"
+}
+
+**Account**
+{
+"companyName" : "Microsoft"
+"emailAddress" : "adam@test.com",
+"addressLine1" : "1 Microsoft Way",
+"addressLine2" : " Suite# 22A"
+"city" : "Redmond",
+"state" : "WA",
+"postalCode" : "98052",
+"country : "USA"
+}
+
+## Exception Handling
+
+* Custom exceptions could be defined based off the need deriving them from the base exception classes.
+
+## Future Work
+
+### Config, Audit logging , Entitlement rules engine
+* All endpoints configuration based on organization hosts and endpoint antology could go in to app.config file
+* Audit logging can be enabled to write audit log information to a database or a data stream(Rabbit MQ) using Spring XD data streams
+* Entitlement rules engine if any can be configured and the api annotated based on the need
+* All PII(Personal Identifiable Information) should be appropriately masked to comply with GDPR regulations
+
+### Circuit Breaker & Customer Product Recommendation
+* Circuit breaking mechanism as Netflix Hystrix can be implemented to help manage the API during downtime scenarios caused due to backend systems failures/errors
+* Based of the information on usage of products by certain customer/companies, the data could be analyzed to send customized product recommendation for customers/companies
+   
+
+## Devops Work      
 ### AWS Infrastructure Checklist
 * Work with AWS infrastructure team to secure the following details to build the AWS infrastructure
    - VPC the application is to be hosted on.
