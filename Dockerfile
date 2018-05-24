@@ -1,4 +1,4 @@
-FROM tomcat:8.0-jre8 AS teptomcatimage
+FROM tomcat:8.0-jre8 AS tomcatimage
 
 ADD repopath/com/app/MarketingApp/app-ws.war-version no.
 ADD local.properties lib/
